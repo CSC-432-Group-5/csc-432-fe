@@ -9,31 +9,26 @@ const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex w-full bg-white p-3">
-      <div className="md:w-[20%]">
+    <div className="flex w-full bg-white p-5">
+      <div className="md:w-[25%]">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       </div>
 
-      <div className="flex-1 flex flex-col px-2 md:px-5">
+      <div className="flex flex-col px-2 md:px-5 w-full">
         <div className="flex justify-between w-full items-center pb-8">
           <div className="md:hidden flex" onClick={() => setSidebarOpen(true)}>
             <CgMenuLeftAlt className="w-6 h-6" aria-hidden="true" />
           </div>
-          <div className="hidden md:flex flex-col">
-            <div className="font-semibold text-sm md:text-base">
-              Hello Robert👋
-            </div>
-            <div className="text-xs text-gray-500">Good Morning</div>
-          </div>
+          <div></div>
 
           <div className="flex gap-3 items-center ">
-            <div>
+            {/* <div>
               <input
                 type="text"
                 placeholder="Search..."
                 className="py-2 px-4 border  outline-none rounded-lg"
               />
-            </div>
+            </div> */}
 
             <div className="bg-gray-100 p-3 hidden md:flex text-sm md:text-lg rounded-lg">
               <CiBellOn />
@@ -54,7 +49,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
 
-        <div className="flex-1">{children}</div>
+        <div className="">{children}</div>
       </div>
     </div>
   );

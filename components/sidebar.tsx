@@ -19,20 +19,20 @@ import { GiOverInfinity } from "react-icons/gi";
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const nav = [
-    { icon: <BiCategoryAlt />, name: "Dashboard" },
-    { icon: <IoIosPeople />, name: "All Employees" },
-    { icon: <MdSupervisedUserCircle />, name: "All Departments" },
-    { icon: <FaCalendarCheck />, name: "Attendance" },
-    { icon: <AiOutlineDollarCircle />, name: "Payroll" },
-    { icon: <FaBusinessTime />, name: "Jobs" },
-    { icon: <IoPeopleOutline />, name: "Candidates" },
-    { icon: <MdOutlineStickyNote2 />, name: "Leaves" },
-    { icon: <MdOutlineEventNote />, name: "Holidays" },
-    { icon: <IoSettingsOutline />, name: "Settings" },
+    { icon: <BiCategoryAlt />, name: "Dashboard", path: "/dashboard" },
+    { icon: <IoIosPeople />, name: "All Employees", path: "/all-employees" },
+    { icon: <MdSupervisedUserCircle />, name: "All Departments", path: "/all-departments" },
+    { icon: <FaCalendarCheck />, name: "Attendance", path: "/employee_list" },
+    { icon: <AiOutlineDollarCircle />, name: "Payroll", path: "/payroll" },
+    { icon: <FaBusinessTime />, name: "Jobs", path: "/jobs" },
+    { icon: <IoPeopleOutline />, name: "Candidates", path: "/candidates" },
+    { icon: <MdOutlineStickyNote2 />, name: "Leaves", path: "/leaves" },
+    { icon: <MdOutlineEventNote />, name: "Holidays", path: "/holidays" },
+    { icon: <IoSettingsOutline />, name: "Settings", path: "/settings" },
   ];
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-full overflow-hidden">
       <div
         className={`fixed inset-0 flex z-40 md:hidden ${
           sidebarOpen ? "block" : "hidden"
@@ -58,7 +58,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
             <nav className=" flex flex-col gap-6 pt-6  font-medium pl-5">
               {nav.map((item, index) => (
                 <div key={index}>
-                  <Link href={""} key={index}>
+                  <Link href={item.path} key={index}>
                     <div className=" text-gray-900 flex gap-3  p-3 rounded-e-lg text-base items-center hover:bg-gray-200 w-full hover:text-[#8D75F5] hover:border-l-4 hover:border-[#8D75F5]">
                       <p className=" text-lg">{item.icon}</p>
                       <p className="">{item.name}</p>
@@ -81,11 +81,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
             <p className="text-black font-bold text-xl ">EMS</p>
           </div>
           <div className="flex flex-col bg-gray-50 gap-5 pt-7">
-            <nav className=" flex flex-col   font-medium ">
+            <nav className=" flex flex-col  font-medium ">
               {nav.map((item, index) => (
                 <div key={index}>
-                  <Link href={""} key={index}>
-                    <div className="text-gray-900 flex gap-3 p-3 rounded-e-lg text-base items-center hover:bg-gray-200 w-full hover:text-[#8D75F5] hover:border-l-4 hover:border-[#8D75F5]">
+                  <Link href={item.path} key={index}>
+                    <div className="text-gray-900 flex gap-3 p-3 rounded-e-lg text-sm items-center hover:bg-gray-200 w-full hover:text-[#8D75F5] hover:border-l-4 hover:border-[#8D75F5]">
                       <p className="text-base md:text-lg">{item.icon}</p>
                       <p className="md:text-lg text-sm">{item.name}</p>
                     </div>
