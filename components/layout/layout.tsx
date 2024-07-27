@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex w-full bg-white p-5">
+    <div className="flex w-full h-full bg-white p-5">
       <div className="md:w-[25%]">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       </div>
@@ -30,11 +30,11 @@ const Layout = ({ children }) => {
               />
             </div> */}
 
-            <div className="bg-gray-100 p-3 hidden md:flex text-sm md:text-lg rounded-lg">
+            <div className="bg-gray-100 p-3 flex text-sm md:text-lg rounded-lg">
               <CiBellOn />
             </div>
 
-            <div className="border p-1 hidden md:flex gap-2 items-center rounded-lg">
+            <div className="border p-1 flex gap-2 items-center rounded-lg">
               <img
                 src="/profileimg.png"
                 alt="Profile"
